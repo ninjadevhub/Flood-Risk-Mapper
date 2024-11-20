@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import axios from 'axios';
 import { useMapContext, ZoneType } from '@/contexts/MapContext';
+import "mapbox-gl/dist/mapbox-gl.css";
 
 const Map: React.FC = () => {
   const { selectedZoneType } = useMapContext();
@@ -99,11 +100,12 @@ const Map: React.FC = () => {
       {...viewport}
       mapStyle="mapbox://styles/mapbox/light-v10"
       onMove={(evt) => setViewport(evt.viewState)}
-      style={{ width: '100%', height: '100%', position: 'relative' }}
+      style={{ position: 'relative' }}
       onClick={handleMapClick}
       accessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       interactiveLayerIds={['flood-zone-layer']}
+      
     >
       {floodData.length > 0 && (
         <Source id="flood-zones" type="geojson" data={{ type: 'FeatureCollection', features: floodData }}>
@@ -135,7 +137,6 @@ const Map: React.FC = () => {
           }
         </div>
       )}
-
     </ReactMapGL>
   );
 };
