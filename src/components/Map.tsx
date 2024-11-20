@@ -60,7 +60,7 @@ const Map: React.FC = () => {
         };
       });
 
-      setFloodData(geojsonFeatures.filter(gf => gf.zone === selectedZoneType));
+      setFloodData(geojsonFeatures.filter((gf: any) => gf.zone === selectedZoneType));
     } catch (error) {
       console.error('Error fetching flood data:', error);
     }
@@ -85,7 +85,7 @@ const Map: React.FC = () => {
   const handleMapClick = (event: any) => {
     const features = event.features;
     if (features && features.length > 0) {
-      const clickedFeature = features.find((f) => f.layer.id === 'flood-zone-layer');
+      const clickedFeature = features.find((f: any) => f.layer.id === 'flood-zone-layer');
       if (clickedFeature) {
         setSelectedZone({ ...clickedFeature, x: event.point.x, y: event.point.y });
         return
