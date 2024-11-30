@@ -86,7 +86,7 @@ src/
 ├── components/ # Reusable components (e.g., Map, Sidebar, Popups)
 ├── contexts/ # React Contexts for state management (e.g., selected zones) 
 ├── app/ # Next.js pages 
-├── styles/ # Tailwind CSS files 
+├── styles/ # Tailwind CSS files
 ├── utils/ # Helper functions and constants
 ```
 
