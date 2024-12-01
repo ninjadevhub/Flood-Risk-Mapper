@@ -1,5 +1,5 @@
 
-export default async function apiResponseHandler(callable: () => Promise<unknown>) {
+export default async function apiResponseHandler(callable: () => Promise<void | Response>) {
     try {
         return await callable()
     } catch (error) {

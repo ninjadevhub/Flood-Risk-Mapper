@@ -14,9 +14,9 @@ const Map: React.FC = () => {
     longitude: -122.4194,
     zoom: 10,
   });
+  
   const [selectedZone, setSelectedZone] = useState<any>(null);
   const apiCallScheduledId = useRef<NodeJS.Timeout>()
-
 
   const fetchFloodData = async (bbox: number[]) => {
     try {
@@ -25,7 +25,8 @@ const Map: React.FC = () => {
         {
           params: {
             f: 'geojson',
-            where: '1=1',
+            // where: '1=1',
+            where: "COUNTY_NAME IN ('Pasco', 'Pinellas', 'Hillsborough')",
             outFields: '*',
             returnGeometry: true,
             geometryType: 'esriGeometryPolygon',

@@ -6,14 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "supabase:start": "supabase start --ignore-health-check",
+    "supabase:stop": "supabase stop",
+    "supabase:stop:no-backup": "supabase stop --no-backup",
+    "supabase:db:reset": "supabase db reset",
+    "supabase:migration:up": "supabase migration up --include-all",
+    "typegen": "supabase gen types typescript --local > src/database.types.ts"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^5.0.3",
-    "@prisma/client": "^6.0.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-switch": "^1.1.1",
+    "@supabase/supabase-js": "^2.46.2",
     "@types/react-map-gl": "^6.1.6",
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
@@ -21,7 +27,6 @@
     "lucide-react": "^0.460.0",
     "mapbox-gl": "^1.13.3",
     "next": "15.0.3",
-    "pg": "^8.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-map-gl": "^7.1.7",
@@ -38,7 +43,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "postcss": "^8",
-    "prisma": "^6.0.0",
+    "supabase": "^1.223.10",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
