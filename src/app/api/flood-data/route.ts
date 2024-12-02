@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { listCensusData } from "@/lib/db/census";
 import GenericAPIRes from "@/models/base-api.dto";
 import apiResponseHandler from "@/utils/api-response-handler";
 import { NextRequest, NextResponse } from "next/server";
